@@ -1,0 +1,119 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+use App\User;
+use App\userFeats;
+use Auth;
+
+class SemiSmart extends Model
+{
+    protected $users;
+    protected $feats = [];
+    protected $keys = [];
+    protected $fina = [];
+    protected $matche = [];
+    protected $matchPercent;
+    
+    public static function start($ids){
+        return (new self())->getIds($ids);
+    }
+
+    public function getIds( $ids)
+    {
+        $this->matchPercent = 20;
+        $this->users = userFeats::find($ids);
+
+        $this->getUsersFeats();
+
+        $this->gatherUsersFeats();
+
+        $this->buildFeatsArray();
+
+        $res = $this->matchFeatsRank();
+        return $res == 'done'? true : false;        
+                      
+    }
+
+    protected function getUsersFeats()
+    {
+        $users = $this->users;
+        foreach($users as $user)
+        {
+            $senduser = $user;
+            // dd($senduser);
+            $usr=[];
+            $user = \collect($user);
+            foreach($user as $key => $val)
+            {
+                $usr[$key]=$val;                               
+                $this->keys[$key] = array();                        
+            }
+            $usr = \array_slice($usr,2,21,true);
+            // dd($usr);           
+            $rank = $this->calcRank($senduser,array_keys($this->keys));            
+            foreach($usr as $key => $val)
+            {
+                $usr[$key]=$val.'/'.$rank[$key];                        
+            }
+            $this->feats[] = $usr;
+        }
+        return;
+    }
+
+    protected function calcRank($user,$arr)
+    {
+        $array = \array_slice($arr,2,21,true);
+        $rank1 = \str_split(User::getRanks($user->id)->stackRank);
+        $rank2 = \array_combine($array,$rank1);
+        return $rank2;
+    }
+
+    protected function gatherUsersFeats()
+    {
+        
+        $this->keys = \array_slice($this->keys,2,21,true);
+        
+        foreach($this->feats as $feat )
+        {
+            foreach($feat as $fkey => $fval)
+            {
+                \array_push($this->keys[$fkey],$fval);
+            }
+        }
+        return;
+    }
+
+    protected function buildFeatsArray()
+    {
+        foreach($this->keys as $key => $val)
+        {
+            $count = \array_count_values($val);
+            $max = array_search(max($count),$count);
+            $this->fina[$key] = $max;
+        }
+        return;
+    }
+
+    protected function matchFeatsRank()
+    {
+        $match = $this->fina;
+        $stackRank=null;
+        $sumRank=0;
+        foreach($match as $mat)
+        {
+            $m1 = \explode('/',$mat);
+            $stackRank .= $m1[1]; 
+            $sumRank += $m1[1];    
+        }
+        $this->fina['stackRank'] = $stackRank;
+        $this->fina['sumRank'] = $sumRank;
+
+        $us = userRanks::find(Auth::user()->id);
+        $us->semiRank = $stackRank;
+        $us->semiSum = $sumRank;
+        $us->save();
+        return 'done';
+    }
+}

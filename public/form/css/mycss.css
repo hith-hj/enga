@@ -1,0 +1,242 @@
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.user_image {
+    display: none;
+    height: 60px;
+    width: 60px;
+    border-radius: 5px;
+    margin: 20px;
+    position: absolute;
+    right: 0px;
+    top: -15px;
+}
+
+.user_card {
+    border: 1px solid #d2cdcd;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #d2cdcd;
+}
+
+.card-body {
+    height: 98%;
+}
+
+.card-footer {
+    padding: 20px;
+    height: 10%;
+}
+
+.user_card_image {
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    width: 120px;
+}
+
+.user_card_info {
+    margin-left: 5px;
+    height: 60%;
+}
+
+.user_card_btns {
+    height: 40%;
+    display: flex;
+    width: 23.4rem;
+}
+
+.user_card_btn {
+    position: relative;
+    left: 300px;
+    bottom: 50px;
+    font-size: 15px;
+    font-weight: 800;
+    border: 2px solid #444;
+    padding: 5px;
+    /* margin-top: 5px; */
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all .3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.user_card_btn:hover {
+    border: none;
+    border-radius: 0px;
+    border-bottom: 2px solid #444;
+    transition: all .2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.selected {
+    border: 2px solid rgb(43, 108, 129);
+}
+
+.card_info {
+    position: absolute;
+    width: 530px;
+    z-index: 10;
+    right: 2.2%;
+    top: 95px;
+}
+
+.feats-card {
+    position: absolute;
+    width: 530px;
+    height: 95vh;
+    padding: 1rem 0rem;
+    background: #fff;
+    z-index: 1;
+    border: 1px solid #d2cdcd;
+    border-radius: 5px;
+    left: 25px;
+    top: 25px;
+    transition: .6s;
+}
+
+.feats {
+    /* margin: 20px;
+    font-size: 18px; */
+    color: black;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+.feats:hover {
+    margin-left: 5px;
+    color: #53606d;
+    transition: .2s;
+}
+
+.feats-card table {
+    color: #000;
+}
+
+.fotNav {
+    /* height: 50px !important;
+    width: 100%;
+    margin: 1px 0px; 
+    border-top: 1px solid #fff !important;*/
+    display: block;
+    /* margin-top: 15px */
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    /* padding: 1px 20px; */
+}
+
+.tab {
+    width: 33.33%;
+    height: 50px;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    line-height: 2.5;
+    font-size: 18px;
+    background-color: #eee;
+}
+
+.tab-left {
+    width: 25%;
+}
+
+.tab-center {
+    width: 50%;
+}
+
+.tab-right {
+    width: 25%;
+}
+
+.tab:hover {
+    background-color: teal;
+    transition: .4s;
+    color: #fff;
+}
+
+.bl {
+    border-left: 1px solid #fff;
+}
+
+.br {
+    border-right: 1px solid #fff;
+}
+
+.p-t-10 {
+    padding-top: 10px !important;
+}
+
+.w-100 {
+    width: auto !important;
+}
+
+.modal-exit {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    float: right;
+}
+
+.navbtns {
+    position: fixed;
+    width: 200px;
+    bottom: 40px;
+    left: 650px;
+    border-radius: 50px;
+    background-image: linear-gradient(to bottom right, #cec7c7, #559fb0, #495f92);
+    transition: .6s;
+}
+
+.Mbtn {
+    position: fixed;
+    bottom: 10px;
+    left: 650px;
+    height: 50px;
+    width: 200px;
+    margin: 10px;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 18px;
+    background-size: 200% auto;
+    color: #FFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    cursor: pointer;
+    border-radius: 50px;
+    background-image: linear-gradient(to right, #00d2ff 0%, #3a7bd5 51%, #00d2ff 100%);
+}
+
+.Mbtn:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    margin: 8px 10px 12px;
+    background-position: right center;
+}
+
+.third-form {
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    background: #fff;
+    height: 100px;
+    width: 320px;
+    padding: 0 25px;
+    border: 2px solid #00d2ff;
+    border-radius: 50px;
+    right: 610px;
+}
+
+.golden {
+    background-color: #fffb06;
+}
+
+.silver {
+    background-color: #c0c0c0;
+}
+
+.bronze {
+    background-color: #cd7f39;
+}
