@@ -1,5 +1,5 @@
-<div class="col-xl-12 col-md-12 my-1 d-flex profile">
-        <div class="col-4 lprofile">
+<div class="col-xl-12 col-md-12  col-sm-12 my-1 profile">
+        <div class="col lprofile">
             <div class="col-12 ">
                 <img src="../storage/users_images/{{$user->user_image}}" class="profile-image" alt="{{$user->name}} profile Image" srcset="">
             </div>
@@ -12,25 +12,26 @@
                 <em><strong>from</strong> {{$user->district}}</em><br>
                 <em><strong>a</strong> {{$user->age}} years old {{$user->gender}}</em><br>               
                 <em>                   
-                    <details>
+                    <details class="animated fadeIn">
                         <summary>More info</summary>
-                        <div class="col-12"><strong>Education </strong> {{$user->education}} </div>
-                        <div class="col-12"><strong>Wealth level</strong> {{$user->feats->wealth}} </div>
-                        <div class="col-12"><strong>Phone</strong> {{substr_replace($user->phone,"****",6,4)}}</div>
-                        <div class="col-12"><strong>Here since</strong> {{$user->created_at->diffForHumans()}}</div>
-                        <div class="col-12"><strong>Intrested In</strong> {{$user->gender == 'male' ? 'Females':'Males'}}</div>
-                        <div class="col-12"><strong>Bio</strong> {{$user->bio}}</div>
+                        <div class="animated slideInDown">
+                            <div class="col-12"><strong>Education </strong> {{$user->education}} </div>
+                            <div class="col-12"><strong>Wealth level</strong> {{$user->feats->wealth}} </div>
+                            <div class="col-12"><strong>Phone</strong> {{substr_replace($user->phone,"****",6,4)}}</div>
+                            <div class="col-12"><strong>Here since</strong> {{$user->created_at->diffForHumans()}}</div>
+                            <div class="col-12"><strong>Intrested In</strong> {{$user->gender == 'male' ? 'Females':'Males'}}</div>
+                            <div class="col-12"><strong>Bio</strong> {{$user->bio}}</div>
+                        </div>                        
                     </details>
                 </em>
-                <div class="d-flex mt-2">
-                    <label for="">Soon</label>
+                {{-- <div class="d-flex mt-2">
                     <button type="button" class="btn ml-2 btn-sm btn-outline-primary" disabled>Rate</button>
                     <button type="button" class="btn ml-2 btn-sm btn-outline-primary" disabled>Request</button>
                     <button type="button" class="btn ml-2 btn-sm btn-outline-dark" disabled>Question</button>                    
-                </div>
+                </div> --}}
             </div>
         </div>
-        <div class="col-8 rprofile">
+        <div class="col rprofile">
             <div class="d-flex mb-2 pb-2">
                 <em class="mx-3  feat-active" wire:click="$set('displayFeat', 'feats')"><strong>Feats</strong></em>
                 {{-- <em class="mx-1 rb" wire:click="$set('displayFeat', 'smart')"><strong>Smart Feats</strong></em>
@@ -40,7 +41,7 @@
             {{-- @if($displayFeat == 'feats') --}}
             <div class=" animated fadeIn card_infoz" >
                 <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
+                    <div class="">
                         <div class="row row-space" style="padding:.2rem .5rem !important">
                             <div class="col-6"><div class="input-group"><label class="label-2"> Height : {{$user->feats->height}} </label> </div></div>
                             <div class="col-6"><div class="input-group"><label class="label-2"> Weight : {{$user->feats->weight}} </label> </div></div>

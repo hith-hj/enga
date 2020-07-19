@@ -80,7 +80,10 @@ window.addEventListener('load', function(event) {
     if (get == null)
         page = 'body'
     else
-        page = get == 'messages' ? 'chats' : get == 'questions' ? 'quests' : get
+        page = get == 'messages' ?
+        'chats' : get == 'questions' ?
+        'quests' : get == 'profile' ?
+        'body' : get
 
     window.livewire.emitTo('main', 'changeBody', page)
         // localStorage.removeItem('prevPage')
