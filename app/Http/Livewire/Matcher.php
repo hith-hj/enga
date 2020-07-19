@@ -27,8 +27,9 @@ class Matcher extends Component
     // }
 
     public function start(){
-        $this->matches = Finder::first($this->type,false) ?
-        Finder::first($this->type,false) : \collect();
+        // $this->matches = Finder::first($this->type,false) ?
+        // Finder::first($this->type,false) : \collect();
+        $this->matches = Finder::first($this->type,true) ?? \collect();
     }
 
     public function reqMatch($id = 0 , $type = '' , $rank = 0)

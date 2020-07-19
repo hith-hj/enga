@@ -10,11 +10,13 @@ use Auth;
 
 class Profile extends Component
 {
-    public $myId;
+    public $uid;
     protected $user;
+    public $displayFeat = 'feats';
+
     public function mount($id)
     {
-        $this->myId = $id;
+        $this->uid = $id;
         $this->start();
     }
 
@@ -25,9 +27,9 @@ class Profile extends Component
 
     public function start()
     {
-        $user = User::find(Auth::id());
-        $user->feats = userFeats::get();
-        $user->rank = userRanks::get();
+        $user = User::find($this->uid);
+        $user->feats = userFeats::get($this->uid);
+        $user->rank = userRanks::get($this->uid);
         $this->user = $user;
     }
 

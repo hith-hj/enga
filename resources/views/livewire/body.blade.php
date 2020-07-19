@@ -6,7 +6,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col-auto mr-1" >
-                                <a href="../../storage/users_images/{{$user->user_image}}" target="_blank">
+                                <a wire:click="$emitTo('main', 'changeBody', ['profile','{{$user->id}}'])">
                                     <img src="../../storage/users_images/{{$user->user_image}}" style="height:100px;width:100px;border-radius:10px;">
                                 </a>
                             </div>

@@ -63,13 +63,20 @@ Route::post('/stock','HomeController@stockRef')->name('stock');
 Route::post('/sendIds' , 'HomeController@getIds');
 Route::post('/updateFeats' , 'HomeController@updateSideFeats');
 
-Route::post('/getgenderAge' , 'HomeController@first');
-Route::post('/getuserFeats' , 'HomeController@second');
+// Route::post('/getgenderAge' , 'HomeController@first');
+// Route::post('/getuserFeats' , 'HomeController@second');
 
 Route::get('/Questionnary',function(){
     return view('adds.quest');
 })->name('Questionnary');
 Route::get('feat','HomeController@feats');
+
+Route::get('/setLang/{lang}',function($lang){
+    // dd(session()->get('locale'));
+    App::setLocale($lang);
+        session()->put('lang', $lang);
+        return redirect()->back();
+});
 
 // Route::get('csv','HomeController@csv');
 // Route::get('csv2','HomeController@csv2');

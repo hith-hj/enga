@@ -137,7 +137,12 @@
                         <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Settings
                     </a>
                     <a class="dropdown-item" href="#">
-                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log
+                        {{-- <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log --}}
+                        <details>
+                            <summary>Language</summary>
+                            <span> <a href="/setLang/{'ar'}">Arabic</a></span>
+                            <span> <a href="/setLang/{'en'}">English</a></span>
+                        </details>
                     </a>
                     <div class="dropdown-divider"></div>
                     {{-- <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
