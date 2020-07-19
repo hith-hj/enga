@@ -72,9 +72,11 @@ Route::get('/Questionnary',function(){
 Route::get('feat','HomeController@feats');
 
 Route::get('/setLang/{lang}',function($lang){
+    
     // dd(session()->get('locale'));
     App::setLocale($lang);
         session()->put('lang', $lang);
+        // dd(App::getLocale());
         return redirect()->back();
 });
 

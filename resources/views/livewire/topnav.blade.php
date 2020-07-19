@@ -119,6 +119,18 @@
                 </div>
             </li>
 
+            <div class="topbar-divider d-none d-sm-block"></div>
+
+            <li class="nav-item dropdown no-arrow mx-1">
+                <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-language fa-fw"></i> </a>
+                <!-- Dropdown - Messages -->
+                <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" 
+                    aria-labelledby="messagesDropdown" style="overflow-y: auto;max-height:40vh;scrollbar-width:none;">
+                    <span> <a class="dropdown-item" href="/setLang/ar">Arabic</a></span>
+                    <span> <a class="dropdown-item" href="/setLang/en">English</a></span>                    
+                </div>
+            </li>
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -136,14 +148,9 @@
                     <a class="dropdown-item" href="#">
                         <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Settings
                     </a>
-                    <a class="dropdown-item" href="#">
-                        {{-- <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log --}}
-                        <details>
-                            <summary>Language</summary>
-                            <span> <a href="/setLang/{'ar'}">Arabic</a></span>
-                            <span> <a href="/setLang/{'en'}">English</a></span>
-                        </details>
-                    </a>
+                    {{-- <a class="dropdown-item" href="#">
+                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log 
+                    </a> --}}
                     <div class="dropdown-divider"></div>
                     {{-- <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout

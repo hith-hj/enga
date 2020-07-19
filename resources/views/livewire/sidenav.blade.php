@@ -1,4 +1,4 @@
-<div >
+<div>
     @php
         switch ($utilNoti) {
             case 'heart':
@@ -51,7 +51,7 @@
         <li class="nav-item active">
             <span class="nav-link" wire:click="$emitTo('main', 'changeBody', 'body')">
                 <i class="fas fa-fw fa-h-square"></i>
-                <span>Home</span>
+                <span>{{__('lang.Home')}}</span>
             </span>
         </li>
 
@@ -71,7 +71,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#findCollapse" >
                 <i class="fa fa-fw fa-search fa-lg"></i>
-                <span >Find</span>
+                <span >{{__('lang.Find')}}</span>
             </a>
             <div id="findCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
@@ -89,7 +89,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" >
                 <i class="fas fa-fw fa-fingerprint fa-lg"></i>
-                <span >Matches
+                <span >{{__('lang.Matches')}}
                     @if($matchNoti == true)
                         {{-- <i class="fa fa-circle {{$matchStat == 'Accepted' ? 'like' : 'ban'}} fa-xs"></i> --}}
                         <i class=" {{$matchIcon}} {{$matchStat == 'Accepted' ? 'like' : 'ban'}} fa-md"></i>
@@ -111,7 +111,7 @@
             <a class="nav-link collapsed" wire:click="$emitTo('main', 'changeBody', 'chats')"
                 data-toggle="collapse" data-target="#collapseChats" >
                 <i class="fas fa-fw fa-comments"></i>
-                <span wire:click="$set('chatNoti', false)">Chats
+                <span wire:click="$set('chatNoti', false)">{{__('lang.Chats')}}
                     @if($chatNoti == true)
                         <i class="ml-2 fa fa-circle ban fa-xs"></i>
                     @endif
@@ -122,7 +122,7 @@
         <li class="nav-item">
             <a wire:click="" class="nav-link" href="#" data-toggle="collapse" data-target="#collapseUtilities" >
                 <i class="fas fa-fw fa-cog"></i>
-                <span >Utilities 
+                <span >{{__('lang.Utilities')}} 
                     @if($utilNoti !== '')
                         <i class=" {{$icon}} fa-lg"></i>
                     @endif
@@ -187,7 +187,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRefs" >
                 <i class="fa fa-fw fa-align-left"></i>
-                <span>Reference
+                <span>{{__('lang.Reference')}}
                     @if(Auth::user()->isFull() == false )
                         <i class="ml-2 fa fa-circle ban fa-xs"></i>
                     @endif
@@ -241,7 +241,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseExtra" aria-expanded="true" aria-controls="collapseExtra">
                 <i class="fa fa-fw fa-link"></i>
-                <span>Extra</span>
+                <span>{{__('lang.Extra')}}</span>
             </a>
             <div id="collapseExtra" class="collapse" aria-labelledby="headingExtra" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded" wire:click="$emitTo('main', 'changeBody', 'quests')">
