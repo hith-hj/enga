@@ -383,15 +383,16 @@
                        <div class="col-12">
                             <div class="input-group">
                                 <label class="label">Bio</label>
-                                <textarea name="bio" class="input--style-2 mb-3" maxlength="1000" oninput="
+                                <textarea name="bio" class="input--style-2 mb-1" maxlength="1000" oninput="
                                 document.querySelector('#check').style.display='block';
                                 "></textarea> 
                             </div>                        
                         </div> 
                     </div>
                     
-                    <div class="p-t-15">
-                        <button id="check" class="Mbtn " type="submit" style="display:none;bottom:50px;">Next <i class="fa fa-chevron-right m-1"></i></button>
+                    <div class="mb-2">
+                        <button id="check" class="btn btn--radius-2 btn--blue col-12" type="submit" style="display:none;bottom:10px;">Next 
+                            <i class="fa fa-chevron-right m-1"></i></button>
                     </div>
                     @csrf
                 </form>
