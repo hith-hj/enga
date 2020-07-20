@@ -1,7 +1,7 @@
 <div class="col-xl-12 col-md-12  col-sm-12 my-1 profile">
         <div class="col lprofile">
             <div class="col-12 ">
-                <img src="../storage/users_images/{{$user->user_image}}" class="profile-image" alt="{{$user->name}} profile Image" srcset="">
+                <img src="/storage/users_images/{{$user->user_image}}" class="profile-image" alt="{{$user->name}} profile Image" srcset="">
             </div>
             <div class="col-12 profile-info ">
                 <div class="main-info" style="padding-bottom: .3rem;border-bottom: 1px solid #d2cdcd">

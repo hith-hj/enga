@@ -85,12 +85,12 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">We</a>
-                    <a href="https://laracasts.com">Will</a>
-                    <a href="https://laravel-news.com">Get</a>
-                    <a href="https://blog.laravel.com">Your</a>
-                    <a href="https://nova.laravel.com">Body</a>
-                    <a href="https://forge.laravel.com">Mate</a>
+                    {{-- <a href="#">We</a> --}}
+                    <a href="#">Let's</a>
+                    <a href="#">Get</a>
+                    <a href="#">Your</a>
+                    <a href="#">Body</a>
+                    <a href="#">Mate</a>
                     {{-- <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a> --}}
                 </div>
