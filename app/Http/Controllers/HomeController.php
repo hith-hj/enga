@@ -124,7 +124,7 @@ class HomeController extends Controller
         $rank->stackRank = $stackRank;
         $rank->stackSum = $stackSum;
         $rank->save();
-        return redirect()->route('getUsers');
+        return redirect()->route('home');
     }
 
     public function third(Request $req)
