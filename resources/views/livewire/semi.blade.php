@@ -13,26 +13,16 @@
                 <div class="card border-left-primary shadow py-1" >
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
-                            <div class="col-2 mr-1" >
+                            <div class="col mr-1" >
                                 <a href="../../storage/users_images/{{$user->user_image}}" target="_blank">
                                     <img src="../../storage/users_images/{{$user->user_image}}" style="height:100px;width:100px;border-radius:15px;">
                                 </a>
                             </div>
-                            <div class="col-8">
+                            <div class="col-6">
                                 <div class="text-md font-weight-bold text-primary text-uppercase mb-1">{{$user->name}}</div>
                                 <div class="h5 mb-0 text-gray-800">chose if liked</div>
                             </div>
-                            <div class="col-auto">
-                                @if($user->matchRate > 60)
-                                    <i class="fas fa-heart fa-2x text-gray-300"
-                                    onmouseover="event.target.classList.add('heart')" onmouseout="event.target.classList.remove('heart')" ></i>
-                                    <i class="far fa-thumbs-up fa-2x text-gray-300"
-                                    onmouseover="event.target.classList.add('like')" onmouseout="event.target.classList.remove('like')"></i>
-                                @else 
-                                    <i class="fa fa-uxer fa-2x text-gray-300 mr-4"></i>
-                                    <i class="fa fa-ban fa-2x text-gray-300" data-toggle="tooltip" title="you can't interact with this to low match rate" 
-                                    onmouseover="event.target.classList.add('ban')" onmouseout="event.target.classList.remove('ban')"></i> 
-                                @endif
+                            <div class="col">
                                     <i id="infoShow{{$loop->index}}" class="fas fa-info-circle fa-2x text-gray-300" onclick="displayInfo({{$user->id}})"
                                     onmouseover="event.target.classList.add('info')" onmouseout="event.target.classList.remove('info')"></i> 
                             </div>
@@ -98,7 +88,8 @@
         @endforelse
         @if(count($users) > -1 && count($users) > 0 )
             <input type="text" name="ids" id="ids" multiple wire:model="ids" hidden>
-            <button onclick="checkIds()" class="Mbtn"> check <i class="fa fa-chevron-circle-right ml-2"></i></button>
+            <button onclick="checkIds()" class="btn btn-primary col-12 mt-3" style="bottom:10px;">Next 
+                <i class="fa fa-chevron-right ml-2"></i></button>
         @endif
     </div>
 </div>

@@ -359,10 +359,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-t-50">
-                        <button id="check" class="Mbtn " 
-                                type="submit" style="display:none;bottom:50px;">Next 
-                                <i class="fa fa-chevron-right m-1"></i></button>
+                    <div class="mt-1 mb-2">
+                        <button class="btn btn--radius-2 btn--blue col-12" type="submit" style="bottom:10px;">Next 
+                            <i class="fa fa-chevron-right m-1"></i></button>
                     </div>
                     @csrf
                 </form>

@@ -126,6 +126,7 @@ class Finder
             });
             return self::checkIfMatchExist($users);
         }
+        return [];
     }
 
     private static function chackIfMatchToOther(collection $users):collection

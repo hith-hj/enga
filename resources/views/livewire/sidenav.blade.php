@@ -51,7 +51,7 @@
         <li class="nav-item active">
             <span class="nav-link" wire:click="$emitTo('main', 'changeBody', 'body')">
                 <i class="fas fa-fw fa-h-square"></i>
-                <span>{{__('lang.Home')}}</span>
+                <span style="cursor: pointer">{{__('lang.Home')}}</span>
             </span>
         </li>
 
@@ -69,17 +69,23 @@
         </div>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#findCollapse" >
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#findCollapse">
                 <i class="fa fa-fw fa-search fa-lg"></i>
                 <span >{{__('lang.Find')}}</span>
             </a>
             <div id="findCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Find By : </h6>
-                    <span class="collapse-item " wire:click="$emitTo('main', 'changeBody', 'smartF')" ><i class="mr-1 fa fa-fw fa-fingerprint"></i>Smart Ref</span>
-                    <span class="collapse-item " wire:click="$emitTo('main', 'changeBody', 'semiF')" ><i class="mr-1 fa fa-fw fa-barcode"></i>Semi Ref</span>
-                    <span class="collapse-item " wire:click="$emitTo('main', 'changeBody', 'stockF')" ><i class="mr-1 fa fa-fw fa-grip-lines-vertical"></i>Stock Ref</span>
-                    <span class="collapse-item " wire:click="$emitTo('main', 'changeBody', 'mixedF')" ><i class="mr-1 far fa-fw fa-circle"></i>Mixed Ref</span>
+                    @if(Auth::user()->isFull() == false )
+                        <a href="#" data-toggle="collapse" data-target="#collapseRefs" >
+                            <span class="collapse-item "><i class="fa fa-fw fa-align-left"></i>References First</span>
+                        </a>
+                    @else
+                        <span class="collapse-item " wire:click="$emitTo('main', 'changeBody', 'smartF')" ><i class="mr-1 fa fa-fw fa-fingerprint"></i>Smart Ref</span>
+                        <span class="collapse-item " wire:click="$emitTo('main', 'changeBody', 'semiF')" ><i class="mr-1 fa fa-fw fa-barcode"></i>Semi Ref</span>
+                        <span class="collapse-item " wire:click="$emitTo('main', 'changeBody', 'stockF')" ><i class="mr-1 fa fa-fw fa-grip-lines-vertical"></i>Stock Ref</span>
+                        <span class="collapse-item " wire:click="$emitTo('main', 'changeBody', 'mixedF')" ><i class="mr-1 far fa-fw fa-circle"></i>Mixed Ref</span>
+                    @endif
                 </div>
             </div>
         </li>
