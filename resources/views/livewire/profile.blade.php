@@ -14,7 +14,7 @@
                 <em>                   
                     <details class="animated fadeIn">
                         <summary>More info</summary>
-                        <div class="animated slideInDown">
+                        <div class="animated slideInLeft">
                             <div class="col-12"><strong>Education </strong> {{$user->education}} </div>
                             <div class="col-12"><strong>Wealth level</strong> {{$user->feats->wealth}} </div>
                             <div class="col-12"><strong>Phone</strong> {{substr_replace($user->phone,"****",6,4)}}</div>
