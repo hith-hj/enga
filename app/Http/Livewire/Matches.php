@@ -70,7 +70,16 @@ class Matches extends Component
         $mat->status = 'accepted';
         $mat->save();
         Notify::storeNotification(Auth::user()->id,$rid,'Match','Accepted');
-        broadcast(new notifier(Auth::user()->id,$rid,'Match', $this->type.'/Accepted'))->toOthers();
+        
+        try{
+            broadcast(new notifier(Auth::user()->id,$rid,'Match', $this->type.'/Accepted'))->toOthers();
+        }
+        catch(\Exception $exc){
+            $this->emit('error','Can\'t boradcast now but will notifi the user');
+        }
+        finally{
+            return;
+        }
         $this->emit('success','you Accepted the match');
         return;
     }
@@ -90,7 +99,16 @@ class Matches extends Component
         $mat->status = 'rejected';
         $mat->save();
         Notify::storeNotification(Auth::user()->id,$rid,'Match','Rejected');
-        broadcast(new notifier(Auth::user()->id,$rid,'Match', $this->type.'/Rejected'))->toOthers();
+        
+        try{
+           broadcast(new notifier(Auth::user()->id,$rid,'Match', $this->type.'/Rejected'))->toOthers(); 
+        }
+        catch(\Exception $exc){
+            $this->emit('error','Can\'t boradcast now but will notifi the user');
+        }
+        finally{
+            return;
+        }
         $this->emit('error','you rejected the match');
         return;
     }
@@ -120,7 +138,15 @@ class Matches extends Component
         // dd($this->match);
         $this->match->pull($matId);
         Notify::storeNotification(Auth::user()->id,$id,'New','Chat Created');
-        return \broadcast(new notifier(Auth::user()->id, $id, 'Chat', ' Chat created'))->toOthers();
+        try{
+            \broadcast(new notifier(Auth::user()->id, $id, 'Chat', ' Chat created'))->toOthers();
+        }
+        catch(\Exception $exc){
+            $this->emit('error','Can\'t boradcast now but will notifi the user');
+        }
+        finally{
+            return;
+        }
     }
 
     public function render()

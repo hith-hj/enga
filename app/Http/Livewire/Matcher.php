@@ -62,7 +62,15 @@ class Matcher extends Component
     public function broadcaster(int $rid , string $type, string $content)
     {
         Notify::storeNotification(Auth::user()->id,$rid,$type,$content);
-        broadcast(new notifier(Auth::user()->id,$rid,$type,$content))->toOthers();
+        try{
+            broadcast(new notifier(Auth::user()->id,$rid,$type,$content))->toOthers();
+        }
+        catch(\Exception $exc){
+            $this->emit('error','Can\'t boradcast now but will notifi the user');
+        }
+        finally{
+            return;
+        }
     }
     public function render()
     {

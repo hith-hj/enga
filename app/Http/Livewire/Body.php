@@ -74,8 +74,15 @@ class Body extends Component
                 'viewed'=>0,
             ]);
             Notify::storeNotification(Auth::user()->id,$id,'Utility',$type);
-            broadcast(new notifier(Auth::user()->id,$id,'Utility',$type))->toOthers();
-            return;
+            try{
+                broadcast(new notifier(Auth::user()->id,$id,'Utility',$type))->toOthers();
+            }
+            catch(\Exception $exc){
+                $this->emit('error','Can\'t boradcast now but will notifi the user');
+            }
+            finally{
+                return;
+            }
         }
     }
 
