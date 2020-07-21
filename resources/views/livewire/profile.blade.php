@@ -43,28 +43,28 @@
                 <div class="row no-gutters align-items-center">
                     <div class="">
                         <div class="row row-space" style="padding:.2rem .5rem !important">
-                            <div class="col-6"><div class="input-group"><label class="label-2"> Height : {{$user->feats->height}} </label> </div></div>
-                            <div class="col-6"><div class="input-group"><label class="label-2"> Weight : {{$user->feats->weight}} </label> </div></div>
-                            <div class="col-6"><div class="input-group"><label class="label-2"> Skin Color : {{$user->feats->skinColor}} </label> </div></div>
-                            <div class="col-6"><div class="input-group"><label class="label-2"> Eyes Color : {{$user->feats->eyeColor}} </label> </div></div>
-                            <div class="col-6"><div class="input-group"><label class="label-2"> Hair Length : {{$user->feats->hairLength}} </label> </div></div>
-                            <div class="col-6"><div class="input-group"><label class="label-2"> Hair Color : {{$user->feats->hairColor}} </label> </div></div>
-                            <div class="col-6"><div class="input-group"><label class="label-2"> Face Shape : {{$user->feats->faceShape}} </label> </div></div>
-                            <div class="col-6"><div class="input-group"><label class="label-2"> Eyes  : {{$user->feats->eyeSize}} </label> </div></div>
-                            <div class="col-6"><div class="input-group"><label class="label-2"> Mouth : {{$user->feats->mouthSize}} </label> </div></div>
-                            <div class="col-6"><div class="input-group"><label class="label-2"> Chin Shape : {{$user->feats->chinShape}} </label> </div></div>
-                            <div class="col-6"><div class="input-group"><label class="label-2"> Body Type : {{$user->feats->bodyType}} </label> </div></div>
-                            <div class="col-6"><div class="input-group"><label class="label-2"> Body Shape : {{$user->feats->bodyShape}} </label> </div></div>
+                            <div class="col-6"><div class="input-group"><label class="label-2"> Height : </label> {{$user->feats->height}}  </div></div>
+                            <div class="col-6"><div class="input-group"><label class="label-2"> Weight : </label> {{$user->feats->weight}}  </div></div>
+                            <div class="col-6"><div class="input-group"><label class="label-2"> Skin Color : </label> {{$user->feats->skinColor}}  </div></div>
+                            <div class="col-6"><div class="input-group"><label class="label-2"> Eyes Color : </label> {{$user->feats->eyeColor}}  </div></div>
+                            <div class="col-6"><div class="input-group"><label class="label-2"> Hair Length : </label> {{$user->feats->hairLength}}  </div></div>
+                            <div class="col-6"><div class="input-group"><label class="label-2"> Hair Color : </label> {{$user->feats->hairColor}}  </div></div>
+                            <div class="col-6"><div class="input-group"><label class="label-2"> Face Shape : </label> {{$user->feats->faceShape}}  </div></div>
+                            <div class="col-6"><div class="input-group"><label class="label-2"> Eyes  : </label> {{$user->feats->eyeSize}}  </div></div>
+                            <div class="col-6"><div class="input-group"><label class="label-2"> Mouth : </label> {{$user->feats->mouthSize}}  </div></div>
+                            <div class="col-6"><div class="input-group"><label class="label-2"> Chin Shape : </label> {{$user->feats->chinShape}}  </div></div>
+                            <div class="col-6"><div class="input-group"><label class="label-2"> Body Type : </label> {{$user->feats->bodyType}}  </div></div>
+                            <div class="col-6"><div class="input-group"><label class="label-2"> Body Shape : </label> {{$user->feats->bodyShape}}  </div></div>
                             <div class="col-6"><div class="input-group"><label class="label-2"> 
-                                {{$user->gender == 'male' ? 'Muscles Rate' : 'WaistLine'}} : {{$user->feats->waistMuscles}} </label> </div></div>
+                                {{$user->gender == 'male' ? 'Muscles Rate' : 'WaistLine'}} : </label> {{$user->feats->waistMuscles}}  </div></div>
                             <div class="col-6"><div class="input-group"><label class="label-2"> 
-                                {{$user->gender == 'male' ? 'Beard Type' : 'Hair Type'}} : {{$user->feats->hairBeard}} </label> </div></div>
-                            <div class="col-6"><div class="input-group"><label class="label-2"> Music Listinging : {{$user->feats->musicListinging}} </label> </div></div>
-                            <div class="col-6"><div class="input-group"><label class="label-2"> Food Love : {{$user->feats->foodLove}} </label> </div></div>
-                            <div class="col-6"><div class="input-group"><label class="label-2"> Book Reading : {{$user->feats->bookReading}} </label> </div></div>
-                            <div class="col-6"><div class="input-group"><label class="label-2"> Movie Watching : {{$user->feats->movieWatching}} </label> </div></div>
-                            <div class="col-6"><div class="input-group"><label class="label-2"> Entertainment : {{$user->feats->entertainment}} </label> </div></div>
-                            <div class="col-6"><div class="input-group"><label class="label-2"> Sense Humor : {{$user->feats->senseHumor}} </label>  </div></div>
+                                {{$user->gender == 'male' ? 'Beard Type' : 'Hair Type'}} : </label> {{$user->feats->hairBeard}}  </div></div>
+                            <div class="col-6"><div class="input-group"><label class="label-2"> Music Listinging : </label> {{$user->feats->musicListinging}}  </div></div>
+                            <div class="col-6"><div class="input-group"><label class="label-2"> Food Love : </label> {{$user->feats->foodLove}}  </div></div>
+                            <div class="col-6"><div class="input-group"><label class="label-2"> Book Reading : </label> {{$user->feats->bookReading}}  </div></div>
+                            <div class="col-6"><div class="input-group"><label class="label-2"> Movie Watching : </label> {{$user->feats->movieWatching}}  </div></div>
+                            <div class="col-6"><div class="input-group"><label class="label-2"> Entertainment : </label> {{$user->feats->entertainment}}  </div></div>
+                            <div class="col-6"><div class="input-group"><label class="label-2"> Sense Humor : </label> {{$user->feats->senseHumor}}   </div></div>
                         </div>
                     </div>
                 </div>
