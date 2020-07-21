@@ -14,7 +14,6 @@
                         Enga <small><sup>2020</sup></small>
                     </h2>
                     <p style="color:#fff;margin-left:28%">Welcome aboard , Enjoy</p>
-                    <p style="color:#fff;margin-left:28%">{{ __('Register') }}</p>
                 </div>
                 <div class="col-lg-7">
                     <div class="p-5">
@@ -67,7 +66,7 @@
                             <a class="small" href="forgot-password.html">Forgot Password?</a>
                         </div>
                         <div class="text-center">
-                            <a class="small" href="login.html">Already have an account? Login!</a>
+                            <a class="small" href="{{route('login')}}">Already have an account? Login!</a>
                         </div>
                     </div>
                 </div>
