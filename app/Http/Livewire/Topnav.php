@@ -22,6 +22,9 @@ class Topnav extends Component
     public function getNotification()
     { 
         $this->notis = Notify::getNotification();
+        $this->notis->each(function($noti){
+            $noti->user = User::find($noti->user_id);
+        });
     }
 
     public function getMsgs()
