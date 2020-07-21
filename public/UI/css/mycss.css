@@ -504,6 +504,7 @@ em {
     -webkit-overflow-style: none;
     overflow-y: auto;
     max-height: 84vh;
+    min-height: 60vh;
     overflow-x: hidden;
     scrollbar-width: none;
 }
