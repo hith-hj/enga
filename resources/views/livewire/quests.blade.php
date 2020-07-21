@@ -1,4 +1,4 @@
-<div >
+<div style="min-height:80% !important">
     <div class=" col-xl-12 ">
         <!-- Card Header - Dropdown -->
         <div class="card-header py-1 d-flex flex-row align-items-center justify-content-between" onclick="newQuestion()">
@@ -21,7 +21,7 @@
             @forelse ($quests as $quest)
             <div class="dropdown-item d-flex align-items-center my-1 bb-i py-2" 
                 style="padding:.5rem 1rem !important" >
-                <div class="mr-1 col-1">
+                <div class="mr-1 col">
                     <div class="icon-circle bg-primary">
                         <i class="fas fa-file-alter text-white"><strong>{{$quest->questionCount}}</strong></i>
                     </div>
@@ -31,7 +31,7 @@
                     <div class="text-gray-700">Type : {{$quest->type}}</div>
                     <div class="small text-gray-500">@ {{$quest->created_at->format('D H:m')}}</div>
                 </div>
-                <div class="col-2">
+                <div class="col">
                     <i class="fa fa-trash" data-toggle="tooltip" title="Delete Questionnrie"
                     wire:click="delQuest('{{$quest->id}}')"></i>
                     <i class="fa fa-plus" data-toggle="tooltip" title="New Question" 
