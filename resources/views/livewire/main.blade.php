@@ -1,14 +1,12 @@
 <div id="wrapper">
-
     @livewire('sidenav')
-
     <div id="content-wrapper" class="d-flex flex-column">
         @livewire('topnav')
         <div id="content" style="flex: .6 0 auto !important;">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-8 col-md-12 animated fadeIn scrol" >
-                        @switch($type)
+                        @switch($component)
                             @case('body')
                                 @livewire('body')
                                 @break
@@ -98,16 +96,14 @@
                                 @livewire('profile',['id'=>$params])
                                 @break
                             {{-- end profile --}}
-                        @endswitch 
+                        @endswitch
                     </div>                                   
                     @livewire('feedtool')
                 </div>
             </div>
         </div>
         @livewire('footer')
-
     </div>
-
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>

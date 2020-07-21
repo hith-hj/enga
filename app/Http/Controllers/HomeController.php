@@ -41,8 +41,8 @@ class HomeController extends Controller
             return view('adds.first');
         }else {
             userRanks::checkFull(); 
-            $type = 'body';
-            return view('index',compact('type'));
+            $component = 'body';
+            return view('index',compact('component'));
         }
         
     }
@@ -60,6 +60,7 @@ class HomeController extends Controller
             'education'=>'required',
             'district'=>'required',
             'age'=>'required|max:90',
+            'socialStatus'=>'required',
         ]);
         $user = User::find(Auth::user()->id);
         $user->gender = $req->gender;

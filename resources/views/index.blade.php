@@ -1,4 +1,4 @@
 @extends('layouts.app')
 @section('content')
-@livewire('main',['type'=>$type])
+@livewire('main',['component'=>$component])
 @endsection
