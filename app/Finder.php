@@ -135,7 +135,7 @@ class Finder
                 return $a == $b ? 1 : 0 ;
             },str_split(Auth::user()->rank($user->id,self::$stack)),
             str_split(Auth::user()->rank(Auth::id(),'stackRank')));
-            return count(array_keys($comp, "1")) > 20;
+            return count(array_keys($comp, "1")) > 10;
         });
         return self::checkIfMatchExist($users);
     }
