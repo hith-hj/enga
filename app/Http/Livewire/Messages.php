@@ -40,17 +40,24 @@ class Messages extends Component
             $this->user = User::find($user->user_id);
         }
         $this->fetchMsg();
-        // broadcast(new online($this->chatId,Auth::user()->id));
     }
 
     public function updatingContent()
     {
-        broadcast(new typing($this->chatId,Auth::user()->id));
+       try{
+           broadcast(new typing($this->chatId,Auth::user()->id));
+        }catch(\Exception $exc){
+            return;
+        }
     }
     
     public function updatedContent()
     {
-        broadcast(new typing($this->chatId,Auth::user()->id,false));
+       try{
+           broadcast(new typing($this->chatId,Auth::user()->id,false));
+        }catch(\Exception $exc){
+            return;
+        }
     }
 
     public function getListeners()
@@ -66,7 +73,11 @@ class Messages extends Component
     {
         if($data['uid'] !== Auth::user()->id && $data['stat'] == true){
             $this->online = true;
-            broadcast(new online($this->chatId,Auth::user()->id));
+            try{
+                broadcast(new online($this->chatId,Auth::user()->id));
+            }catch(\Exception $exc){
+                return;
+            }
         } else {
             $this->online = false;
         }
@@ -103,14 +114,21 @@ class Messages extends Component
         if($this->online != true )
         {
             Notify::storeNotification(Auth::user()->id,$this->user->id,'Message',$this->content);
+            try{
             \broadcast(new notifier(Auth::user()->id,$this->user->id,'message',$this->content))->toOthers();
+            \broadcast(new msg($this->chatId))->toOthers();
+            }catch(\Exception $exc){
+                $this->emit('error','couldn\'t establish live connection,but your msg will be sent');
+            }finally{
+              return;  
+            }
         }        
-        return broadcast(new msg($this->chatId))->toOthers();
+        return ;
     }
 
     public function fetchMsg($data = [])
     {
-        $msgs = @Message::all()->where('chat_id',$this->chatId) ?: NULL;
+        $msgs = Message::all()->where('chat_id',$this->chatId) ?? NULL;
         if($msgs == NULL)
         {
             return $this->msgs = [];
