@@ -8,6 +8,7 @@ use App\User;
 use App\userFeats;
 use App\userRanks;
 use Storage;
+use File;
 use Auth;
 use DB;
 
@@ -80,23 +81,24 @@ class HomeController extends Controller
         $this->validate($req,[
             'user_image' => 'nullable|image|max:1999',
         ]);
-        $image = $req->file('user_image');
-        if($req->hasFile('user_image') && $image->isFile()){
-            $nameWithExt = $image->getClientOriginalName();
-            $fileName = pathinfo($nameWithExt,PATHINFO_FILENAME);
-            $ext = $image->getClientOriginalExtension();
-            $currentDate = Carbon::now()->toDateString();            
-            $nameToStore = $fileName.'_'.$currentDate.'.'.$ext;
-            if(!Storage::disk('public')->exists('users_images')){
-                Storage::disk('public')->makeDirectory('users_images');
+        $img = $req->file('user_image');
+        if($req->hasFile('user_image') && $img->isFile())
+        {
+            $imgName = $img->getClientOriginalName();
+            $imgExt = $img->getClientOriginalExtension();
+            $fullName = $imgName.'_'.Carbon::now()->toDateString().'.'.$imgExt;
+            if(!Storage::disk('public')->exists('uploads')){
+                Storage::disk('public')->makeDirectory('uploads');
+                Storage::disk('public')->makeDirectory('uploads/users_images');
             }
-            $path = $image->storeAs('public/users_images',$nameToStore);
+            $path = $img->storeAs('uploads/users_images', $fullName , 'public');
         } else {
-            $nameToStore = 'user.jpg';
-        } 
+            $fullName = 'user.jpg';
+        }
+
         $info = $req->all();
         $user = User::find(Auth::user()->id);
-        $user->user_image = $nameToStore;        
+        $user->user_image = $fullName;        
         $user->bio = $info['bio'];
         $user->status = 1;
         $user->save();

@@ -7,7 +7,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col-auto mr-1" >
                                 <a wire:click="$emitTo('main', 'changeBody', ['profile','{{$user->id}}'])">
-                                    <img src="{{asset('storage/users_images/'.$user->user_image)}}" 
+                                    <img src="{{asset('uploads/users_images/'.$user->user_image)}}" 
                                     style="height:100px;width:100px;border-radius:10px;"
                                     alt="{{$user->name}} image">
                                 </a>
