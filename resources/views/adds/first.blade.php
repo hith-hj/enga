@@ -8,7 +8,7 @@
                     <form action="/getgenderAge" method="POST" >
                             <div class="row row-space">
                                 <div class="col-2 input-group">
-                                    <label class="label">Gender</label>
+                                    <label class="label">{{__('lang.Gender')}}</label>
                                     <div class="p-t-10">
                                         <label class="radio-container m-r-45">Male
                                             <input type="radio" checked="checked" name="gender" value="male" >
@@ -22,13 +22,13 @@
                                 </div>
                                 <div class="col-2">
                                     <div class="input-group">
-                                        <label class="label">Age</label>
+                                        <label class="label">{{__('lang.Age')}}</label>
                                         <input class="input--style-4 " type="number" inputmode="numeric" name="age" min="18" required >
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <div class="input-group">
-                                        <label class="label">district</label>
+                                        <label class="label">{{__('lang.district')}}</label>
                                         <div class="rs-select2 js-select-simple select--no-search">
                                             <select required name="district" >
                                                 <option disabled="disabled" selected="selected">Choose option</option>
@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="col-2">
                                     <div class="input-group">
-                                        <label class="label">Edutcation</label>
+                                        <label class="label">{{__('lang.Edutcation')}}</label>
                                         <div class="rs-select2 js-select-simple select--no-search">
                                             <select required name="education" >
                                                 <option disabled="disabled" selected="selected">Choose option</option>
@@ -63,13 +63,13 @@
                                 </div> 
                                 <div class="col-2">
                                     <div class="input-group">
-                                        <label class="label">Phone Number</label>
+                                        <label class="label">{{__('lang.Phone Number')}} </label>
                                         <input class="input--style-4" type="text" name="phone" inputmode="numeric" pattern="(09)\d{8}" required>
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <div class="input-group">
-                                        <label class="label">social status</label>
+                                        <label class="label">{{__('lang.social status')}} </label>
                                         <div class="rs-select2 js-select-simple select--no-search">
                                             <select required name="socialStatus">
                                                 <option disabled="disabled" selected="selected">Choose option</option>

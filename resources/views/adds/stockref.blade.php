@@ -3,14 +3,14 @@
 <div class="page-wrapper bg-gra-02 font-poppins animated slideInRight" onmouseover="changeSelectOption('{{Auth::user()->gender}}')">
     <div id="container" class="wrapper wrapper--w780 " >
         <div class="card card-4" style="height:95vh; overflow-y:auto; scrollbar-width: none;">
-            <div class="card-body">
-                <h2 class="title">Chose what you want </h2>
+            <h2 class="title mt-1 ml-1">Chose what you want </h2>
+            <div class="card-body" style="{{App::getLocale() == 'ar' ? 'text-align:right;' : ''}}">
                 <form action="/stock" method="POST" enctype="multipart/form-data">
-                    <h3>Basics & colors</h3><hr>
+                    <h3>{{__('lang.Basics')}}</h3><hr>
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Height</label>
+                                <label class="label">{{__('lang.Height')}} </label>
                                 <div class="rs-select2 js-select-simple select--no-search">
                                     <select required name="height" >
                                         <option disabled="disabled" selected="selected">Choose option</option>
@@ -29,7 +29,7 @@
                         </div>
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Weight</label>
+                                <label class="label">{{__('lang.Weight')}} </label>
                                 <div class="rs-select2 js-select-simple select--no-search">
                                     <select required name="weight" >
                                         <option disabled="disabled" selected="selected">Choose option</option>
@@ -47,11 +47,11 @@
                             </div>
                         </div>                      
                     </div>
-                    <h3>Color</h3><hr>
+                    <h3>{{__('lang.Colors')}}</h3><hr>
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Skin Color</label>
+                                <label class="label">{{__('lang.Skin Color')}}</label>
                                 <div class="rs-select2 js-select-simple select--no-search">
                                     <select required name="skinColor" >
                                         <option disabled="disabled" selected="selected">Choose option</option>
@@ -65,7 +65,7 @@
                         </div>
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Eye Color</label>
+                                <label class="label">{{__('lang.Eye Color')}}</label>
                                 <div class="rs-select2 js-select-simple select--no-search">
                                     <select required name="eyeColor">
                                         <option disabled="disabled" selected="selected">Choose option</option>
@@ -79,11 +79,11 @@
                             </div>
                         </div> 
                     </div>
-                    <h3>Hair</h3><hr>  
+                    <h3>{{__('lang.Hair')}}</h3><hr>  
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Hair color</label>
+                                <label class="label">{{__('lang.Hair color')}}</label>
                                 <div class="rs-select2 js-select-simple select--no-search">
                                     <select required name="hairColor">
                                         <option disabled="disabled" selected="selected">Choose option</option>
@@ -98,7 +98,7 @@
                         </div>
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Hair length</label>
+                                <label class="label">{{__('lang.Hair length')}}</label>
                                 <div class="rs-select2 js-select-simple select--no-search">
                                     <select required name="hairLength">
                                         <option disabled="disabled" selected="selected">Choose option</option>
@@ -113,11 +113,11 @@
                             </div>
                         </div>                        
                     </div>
-                    <h3>Face</h3><hr>
+                    <h3>{{__('lang.Face')}}</h3><hr>
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Face Shape</label>
+                                <label class="label">{{__('lang.Face Shape')}}</label>
                                 <div class="rs-select2 js-select-simple select--no-search">
                                     <select required name="faceShape">
                                         <option disabled="disabled" selected="selected">Choose option</option>
@@ -133,7 +133,7 @@
                         </div>
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Eyes</label>
+                                <label class="label">{{__('lang.Eyes')}} </label>
                                 <div class="rs-select2 js-select-simple select--no-search">
                                     <select required name="eyeSize">
                                         <option disabled="disabled" selected="selected">Choose option</option>
@@ -147,7 +147,7 @@
                         </div>
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Mouth</label>
+                                <label class="label">{{__('lang.Mouth')}} </label>
                                 <div class="rs-select2 js-select-simple select--no-search">
                                     <select required name="mouthSize">
                                         <option disabled="disabled" selected="selected">Choose option</option>
@@ -163,7 +163,7 @@
                         </div>
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Cheeks</label>
+                                <label class="label">{{__('lang.Cheeks')}} </label>
                                 <div class="rs-select2 js-select-simple select--no-search">
                                     <select required name="cheekSize">
                                         <option disabled="disabled" selected="selected">Choose option</option>
@@ -191,11 +191,11 @@
                             </div>
                         </div>
                     </div>                   
-                    <h3>Body</h3><hr>
+                    <h3>{{__('lang.Body')}}</h3><hr>
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Body Type</label>
+                                <label class="label">{{__('lang.Body Type')}}</label>
                                 <div class="rs-select2 js-select-simple select--no-search">
                                     <select required name="bodyType">
                                         <option disabled="disabled" selected="selected">Choose option</option>
@@ -210,7 +210,7 @@
                         </div>
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Body Shape</label>
+                                <label class="label">{{__('lang.Body Shape')}}</label>
                                 <div class="rs-select2 js-select-simple select--no-search">
                                     <select required name="bodyShape">
                                         <option disabled="disabled" selected="selected">Choose option</option>
@@ -242,11 +242,11 @@
                         </div>
                     </div>
 
-                    <h3>Extra</h3><hr>
+                    <h3>{{__('lang.Extra')}}</h3><hr>
                     <div class="row row-space">
                         <div class="col-12">
                             <div class="input-group">
-                                <label class="label">wealth</label>
+                                <label class="label">{{__('lang.wealth')}} </label>
                                 <div class="rs-select2 js-select-simple select--no-search">
                                     <select required name="wealth">
                                         <option disabled="disabled" selected="selected">Choose option</option>
@@ -262,7 +262,7 @@
                         </div>    
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Music listening </label>
+                                <label class="label">{{__('lang.Music listening')}} </label>
                                 <div class="rs-select2 js-select-simple select--no-search">
                                     <select required name="musicListinging">
                                         <option disabled="disabled" selected="selected">Choose option</option>
@@ -278,7 +278,7 @@
                         </div>    
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Food love </label>
+                                <label class="label">{{__('lang.Food love')}} </label>
                                 <div class="rs-select2 js-select-simple select--no-search">
                                     <select required name="foodLove">
                                         <option disabled="disabled" selected="selected">Choose option</option>
@@ -294,7 +294,7 @@
                         </div>    
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Book reading </label>
+                                <label class="label">{{__('lang.Book reading')}} </label>
                                 <div class="rs-select2 js-select-simple select--no-search">
                                     <select required name="bookReading">
                                         <option disabled="disabled" selected="selected">Choose option</option>
@@ -310,7 +310,7 @@
                         </div>    
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Movie watching</label>
+                                <label class="label">{{__('lang.Movie watching')}}</label>
                                 <div class="rs-select2 js-select-simple select--no-search">
                                     <select required name="movieWatching">
                                         <option disabled="disabled" selected="selected">Choose option</option>
@@ -326,7 +326,7 @@
                         </div>    
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Entertainment level</label>
+                                <label class="label">{{__('lang.Entertainment level')}}</label>
                                 <div class="rs-select2 js-select-simple select--no-search">
                                     <select required name="entertainment">
                                         <option disabled="disabled" selected="selected">Choose option</option>
@@ -342,7 +342,7 @@
                         </div>    
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Sense humor</label>
+                                <label class="label">{{__('lang.Sense humor')}}</label>
                                 <div class="rs-select2 js-select-simple select--no-search">
                                     <select required name="senseHumor" onchange="
                                     document.querySelector('#check').style.display='block';

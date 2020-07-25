@@ -110,6 +110,16 @@
                             <a href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
+
+                    {{-- <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>{{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form> --}}
                 </div>
             @endif
 
@@ -119,14 +129,11 @@
                 </div>
 
                 <div class="links">
-                    {{-- <a href="#">We</a> --}}
                     <a href="#">Let's</a>
                     <a href="#">Get</a>
                     <a href="#">Your</a>
                     <a href="#">Body</a>
                     <a href="#">Mate</a>
-                    {{-- <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a> --}}
                 </div>
                 <div class="bottom-center">
                     <span> <a class="lang {{App::getLocale() == 'ar' ? 'active':''}} " href="/setLang/ar">{{__('Arabic')}}</a></span>

@@ -398,10 +398,10 @@ class HomeController extends Controller
                 'Eyes Size'=>['Small','Normall','Big','e1','e2','e3'],
                 'Mouth Size'=>['Slim','Normal','Full','Wide','Big','M5'],
                 'Chin Shape'=>['Narrow','Normal','Wide','c1','c2','c3'],
-                'Hair type'=>['Light','Normal','Heavy','h1','h2','h3'],
+                'Hair Type'=>['Light','Normal','Heavy','h1','h2','h3'],
                 'Body Type'=>['Slim','Normal','Curvy','Chubby','b1','b2'],
                 'Body Shape'=>['Round','Hour glass','Rectangle','V-triangle','A-triangle',],
-                'waist Line'=>['Xsmall','Small','Medium','Large','XLarge',],
+                'Waist Line'=>['Xsmall','Small','Medium','Large','XLarge',],
                 'Muscles Rate'=>['Xsmall','Small','Medium','Large','XLarge','M5'],
                 'Beard Type'=>['Light','Normall','Heavy','Large','XLarge','B5'],
             ];

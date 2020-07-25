@@ -45,7 +45,7 @@
                                         <div class="col-6"><div class="input-group"><label class="label feats"> {{Auth::user()->flip('Body Type', $stack[10], $type)}} </label> </div></div>
                                         <div class="col-6"><div class="input-group"><label class="label feats"> {{Auth::user()->flip('Body Shape', $stack[11], $type)}} </label> </div></div>
                                         <div class="col-6"><div class="input-group"><label class="label feats"> 
-                                            {{Auth::user()->flip(Auth::user()->gender == 'male' ? 'Muscles Rate' : 'WaistLine', $stack[12] , $type)}} </label> </div></div>
+                                            {{Auth::user()->flip(Auth::user()->gender == 'male' ? 'Muscles Rate' : 'Waist Line', $stack[12] , $type)}} </label> </div></div>
                                         <div class="col-6"><div class="input-group"><label class="label feats">
                                             {{Auth::user()->flip(Auth::user()->gender == 'male' ? 'Beard Type' : 'Hair Type', $stack[13] , $type)}}</label> </div></div>
                                         <div class="col-6"><div class="input-group"><label class="label feats"> Wealth : {{__('Level')}} {{$stack[14]}} </label> </div></div>

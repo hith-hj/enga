@@ -119,11 +119,8 @@ class Messages extends Component
             \broadcast(new msg($this->chatId))->toOthers();
             }catch(\Exception $exc){
                 $this->emit('error','couldn\'t establish live connection,but your msg will be sent');
-            }finally{
-              return;  
             }
-        }        
-        return ;
+        }
     }
 
     public function fetchMsg($data = [])
