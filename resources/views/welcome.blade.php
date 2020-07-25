@@ -40,6 +40,26 @@
                 top: 18px;
             }
 
+            .bottom-center {
+                position: absolute;
+                /* right: 590px; */
+                bottom: 18px;
+                width:100%;
+            }
+
+            @media (max-width:500px){
+                .bottom-center {
+                /* right: 70px; */
+                right: 0px;
+                } 
+            }
+            @media (min-width:590px){
+                .bottom-center {
+                right: 0%;
+                /* right: 40%; */
+                } 
+            }
+
             .content {
                 text-align: center;
             }
@@ -58,8 +78,22 @@
                 text-transform: uppercase;
             }
 
+            .lang{
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
             .m-b-md {
                 margin-bottom: 30px;
+            }
+
+            .active{
+                color:blue;
             }
         </style>
     </head>
@@ -93,6 +127,10 @@
                     <a href="#">Mate</a>
                     {{-- <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a> --}}
+                </div>
+                <div class="bottom-center">
+                    <span> <a class="lang {{App::getLocale() == 'ar' ? 'active':''}} " href="/setLang/ar">{{__('Arabic')}}</a></span>
+                    <span> <a class="lang {{App::getLocale() == 'en' ? 'active':''}} " href="/setLang/en">{{__('English')}}</a></span>                    
                 </div>
             </div>
         </div>

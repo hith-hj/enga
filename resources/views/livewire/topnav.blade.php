@@ -127,8 +127,8 @@
                 <!-- Dropdown - Messages -->
                 <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" 
                     aria-labelledby="messagesDropdown" style="overflow-y: auto;max-height:40vh;scrollbar-width:none;">
-                    <span> <a class="dropdown-item" href="/setLang/ar">Arabic</a></span>
-                    <span> <a class="dropdown-item" href="/setLang/en">English</a></span>                    
+                    <span> <a class="dropdown-item {{App::getLocale() == 'ar' ? 'active' : ''}}" href="/setLang/ar">Arabic</a></span>
+                    <span> <a class="dropdown-item {{App::getLocale() == 'en' ? 'active' : ''}}" href="/setLang/en">English</a></span>                    
                 </div>
             </li>
 
