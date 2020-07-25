@@ -43,7 +43,7 @@
             .bottom-center {
                 position: absolute;
                 /* right: 590px; */
-                bottom: 18px;
+                bottom: 28px;
                 width:100%;
             }
 
