@@ -17,7 +17,6 @@ class SemiSmart extends Model
     protected $matchPercent;
     
     public static function start($ids){
-        // return (new self())->getIds($ids);
         return (new self())->getRanks($ids);
     }
 

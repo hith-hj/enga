@@ -48,6 +48,8 @@ class Messages extends Component
            broadcast(new typing($this->chatId,Auth::user()->id));
         }catch(\Exception $exc){
             return;
+        }finally{
+            return;
         }
     }
     
@@ -56,6 +58,8 @@ class Messages extends Component
        try{
            broadcast(new typing($this->chatId,Auth::user()->id,false));
         }catch(\Exception $exc){
+            return;
+        }finally{
             return;
         }
     }
@@ -119,6 +123,8 @@ class Messages extends Component
             \broadcast(new msg($this->chatId))->toOthers();
             }catch(\Exception $exc){
                 $this->emit('error','couldn\'t establish live connection,but your msg will be sent');
+            }finally{
+                return;
             }
         }
     }

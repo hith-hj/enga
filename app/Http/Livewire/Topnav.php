@@ -70,11 +70,6 @@ class Topnav extends Component
         return;
     }
 
-    public function newMsg()
-    {
-        
-    }
-
     public function render()
     {
         

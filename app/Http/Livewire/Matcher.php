@@ -55,8 +55,9 @@ class Matcher extends Component
         if( $id !== 0 && $type !== '' && $rank !== 0)
         {
             Match::where([['user_id',Auth::user()->id],['second_id',$id],])->delete();
+            return $this->emit('error', 'Match request removed');
         }
-        return $this->emit('error', 'Match request removed');
+        return $this->emit('error','something went wrong');
     }
 
     public function broadcaster(int $rid , string $type, string $content)

@@ -84,6 +84,7 @@ class Body extends Component
                 return;
             }
         }
+        return $this->emit('error','something went wrong');
     }
 
     public function remUtl($id = 0)
@@ -94,7 +95,7 @@ class Body extends Component
             $del->delete();
             // Notify::deleteNotification($id);
         }        
-        return;
+        return $this->emit('error','something went wrong');
     }
 
     public function render()
