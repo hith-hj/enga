@@ -43,7 +43,7 @@
             .bottom-center {
                 position: absolute;
                 /* right: 590px; */
-                bottom: 28px;
+                bottom: 20px;
                 width:100%;
             }
 
@@ -51,6 +51,7 @@
                 .bottom-center {
                 /* right: 70px; */
                 right: 0px;
+                bottom:35px;
                 } 
             }
             @media (min-width:590px){
