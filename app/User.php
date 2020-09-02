@@ -92,13 +92,14 @@ class User extends Authenticatable
         {
             return userRanks::find(Auth::user()->id)->$type;
         }else {
-            return userRanks::find($id)->$type;
+            return userRanks::get($id)->$type;
         }
     }
 
     public function isFull()
     {
-        return userRanks::find(Auth::user()->id)->isFull;
+        $isFull = userRanks::get(Auth::user()->id);
+        return $isFull->isFull;
     }
 
     public function flip(string $feat , int $value , string $type):string 
