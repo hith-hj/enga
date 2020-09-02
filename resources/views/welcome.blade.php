@@ -136,10 +136,10 @@
                     <a href="#">Body</a>
                     <a href="#">Mate</a>
                 </div>
-                <div class="bottom-center">
+                {{-- <div class="bottom-center">
                     <span> <a class="lang {{App::getLocale() == 'ar' ? 'active':''}} " href="/setLang/ar">{{__('Arabic')}}</a></span>
                     <span> <a class="lang {{App::getLocale() == 'en' ? 'active':''}} " href="/setLang/en">{{__('English')}}</a></span>                    
-                </div>
+                </div> --}}
             </div>
         </div>
     </body>

@@ -1,5 +1,39 @@
 @extends('layouts.app')
 
+<style>
+    .bottom-center {
+        position: absolute;
+        /* right: 590px; */
+        bottom: 20px;
+        width:100%;
+    }
+    .lang{
+        color: #636b6f;
+        padding: 0 25px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: .1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    .active{
+        color:blue;
+    }
+
+    @media (max-width:500px){
+        .bottom-center {
+        /* right: 70px; */
+        right: 0px;
+        bottom:35px;
+        } 
+    }
+    @media (min-width:590px){
+        .bottom-center {
+        right: 0%;
+        /* right: 40%; */
+        } 
+    }
+</style>
 @section('content')
 
 <div class="container">
@@ -24,7 +58,7 @@
                                 <form class="user" method="POST" action="{{ route('login') }}">
                                     @csrf
                                     <div class="form-group">
-                                        <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="{{__('lang.Enter Email Address')}}...">
+                                        <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="{{__('lang.Email Address')}}">
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -39,12 +73,12 @@
                                             </span>
                                         @enderror
                                     </div>
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <div class="custom-control custom-checkbox small">
                                             <input type="checkbox" class="custom-control-input" id="customCheck">
                                             <label class="custom-control-label" for="customCheck">Remember Me</label>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     {{-- <a href="index.html" class="btn btn-primary btn-user btn-block">Login </a> --}}
                                     <button type="submit" class="btn btn-primary btn-user btn-block">
                                         {{ __('lang.Login') }}
@@ -62,11 +96,14 @@
                     </div>
                 </div>
             </div>
-
+            <div class="bottom-center">
+                <span> <a class="lang {{App::getLocale() == 'ar' ? 'active':''}} " href="/setLang/ar">{{__('Arabic')}}</a></span>
+                <span> <a class="lang {{App::getLocale() == 'en' ? 'active':''}} " href="/setLang/en">{{__('English')}}</a></span>                    
+            </div>
         </div>
-
+        
     </div>
-
+    
 </div>
 
 @endsection

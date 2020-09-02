@@ -42,7 +42,7 @@ class Body extends Component
             $usr->feats = User::getFeats($usr->id);
             $a = array_map(function($a,$b){
                 return $a == $b ? 1 : 0;
-            },str_split(Auth::user()->rank(Auth::user()->id,'semiRank'))
+            },str_split(Auth::user()->rank(Auth::user()->id,'stockRank'))
             ,str_split(Auth::user()->rank($usr->id,'stackRank')));
             $count = count(array_keys($a, "1"));
             $usr->matchRate = round($count*100/21, 3);
